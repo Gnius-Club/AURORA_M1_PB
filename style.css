@@ -787,6 +787,176 @@ body {
         0 0 40px currentColor;
 }
 
+/* Tutorial Overlay */
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 10, 26, 0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+}
+
+.tutorial-container {
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    padding: var(--space-32);
+    background: rgba(0, 20, 40, 0.8);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+
+.tutorial-header {
+    margin-bottom: var(--space-32);
+}
+
+.tutorial-title {
+    font-size: 48px;
+    color: #00ff00;
+    margin-bottom: var(--space-8);
+    letter-spacing: 4px;
+}
+
+.tutorial-subtitle {
+    font-size: 16px;
+    color: #00ffff;
+    opacity: 0.8;
+}
+
+.tutorial-content {
+    position: relative;
+    min-height: 300px;
+    margin-bottom: var(--space-32);
+}
+
+.tutorial-step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.tutorial-step.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+
+.step-icon {
+    font-size: 60px;
+    margin-bottom: var(--space-16);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.step-title {
+    font-size: 32px;
+    color: #ffff00;
+    margin-bottom: var(--space-16);
+}
+
+.step-description {
+    font-size: 18px;
+    color: #00ffff;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mobile-note {
+    margin-top: var(--space-16);
+    padding: var(--space-12);
+    background: rgba(255, 255, 0, 0.1);
+    border: 1px solid rgba(255, 255, 0, 0.3);
+    border-radius: var(--radius-base);
+}
+
+.mobile-note small {
+    color: #ffff00;
+    font-size: 14px;
+}
+
+.tutorial-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-24);
+}
+
+.tutorial-btn {
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid #00ffff;
+    border-radius: var(--radius-base);
+    padding: var(--space-8) var(--space-16);
+    color: #00ffff;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tutorial-btn:hover {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.tutorial-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.tutorial-dots {
+    display: flex;
+    gap: var(--space-8);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.tutorial-start-btn {
+    background: rgba(0, 255, 0, 0.3);
+    border: 2px solid #00ff00;
+    border-radius: var(--radius-md);
+    padding: var(--space-16) var(--space-32);
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tutorial-start-btn:hover {
+    background: rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05);
+}
+
 /* Header */
 .header {
     text-align: center;
@@ -1065,7 +1235,7 @@ body {
 
 .completion-container {
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     padding: var(--space-32);
 }
 
@@ -1116,22 +1286,90 @@ body {
     line-height: 1.5;
 }
 
-.continue-button {
-    background: rgba(255, 255, 0, 0.2);
-    border: 2px solid #ffff00;
+/* Password Section */
+.password-section {
+    margin-top: var(--space-32);
+    padding: var(--space-24);
+    background: rgba(0, 50, 100, 0.3);
+    border: 2px solid rgba(0, 255, 255, 0.3);
     border-radius: var(--radius-md);
-    padding: var(--space-16) var(--space-32);
-    color: #ffff00;
-    font-family: 'VT323', monospace;
-    font-size: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: var(--space-24);
 }
 
-.continue-button:hover {
+.password-title {
+    font-size: 24px;
+    color: #ffff00;
+    margin-bottom: var(--space-16);
+}
+
+.password-display {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00ff00;
+    border-radius: var(--radius-base);
+    padding: var(--space-16);
+    margin-bottom: var(--space-24);
+    position: relative;
+    overflow: hidden;
+}
+
+.password-text {
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    letter-spacing: 2px;
+    word-break: break-all;
+    animation: password-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes password-glow {
+    from { text-shadow: 0 0 10px #00ff00; }
+    to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; }
+}
+
+.password-actions {
+    display: flex;
+    gap: var(--space-16);
+    justify-content: center;
+    margin-bottom: var(--space-16);
+}
+
+.password-btn {
+    background: rgba(0, 255, 255, 0.2);
+    border: 2px solid #00ffff;
+    border-radius: var(--radius-md);
+    padding: var(--space-12) var(--space-20);
+    color: #00ffff;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 250px;
+}
+
+.copy-btn:hover {
+    background: rgba(0, 255, 0, 0.3);
+    border-color: #00ff00;
+    color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.return-btn {
+    background: rgba(255, 255, 0, 0.2);
+    border-color: #ffff00;
+    color: #ffff00;
+}
+
+.return-btn:hover {
     background: rgba(255, 255, 0, 0.4);
-    box-shadow: 0 0 30px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+}
+
+.password-warning {
+    font-size: 14px;
+    color: #ffff00;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 /* Mensaje de feedback */
@@ -1189,12 +1427,21 @@ body {
         gap: var(--space-16);
     }
     
-    .title {
+    .title, .tutorial-title {
         font-size: 36px;
     }
     
     .section-title {
         font-size: 20px;
+    }
+
+    .password-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .password-btn {
+        max-width: 100%;
     }
 }
 
@@ -1207,7 +1454,7 @@ body {
         padding: var(--space-16);
     }
     
-    .title {
+    .title, .tutorial-title {
         font-size: 28px;
     }
     
@@ -1217,5 +1464,22 @@ body {
     
     .aurora-eye {
         font-size: 80px;
+    }
+
+    .tutorial-navigation {
+        flex-direction: column;
+        gap: var(--space-16);
+    }
+
+    .step-title {
+        font-size: 24px;
+    }
+
+    .step-description {
+        font-size: 16px;
+    }
+
+    .password-text {
+        font-size: 20px;
     }
 }
