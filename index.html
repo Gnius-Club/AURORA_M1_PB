@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.U.R.O.R.A. - Misión 1: Inspección de Protocolos</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <header class="header">
+        <h1 class="title glow">A.U.R.O.R.A.</h1>
+        <p class="subtitle">SISTEMA DE RECONOCIMIENTO ORBITAL AUTOMATIZADO</p>
+        <p class="mission-title">MISIÓN 1: INSPECCIÓN DE PROTOCOLOS</p>
+    </header>
+
+    <main class="game-container" id="gameContainer">
+        <div class="column-left">
+            <h2 class="section-title glow">MÓDULOS DAÑADOS</h2>
+            <div class="modules-panel">
+                <button class="module-button" id="module-luces" data-module="luces">
+                    <span class="module-icon">💡</span>
+                    <span class="module-name">Modulo_Luces.js</span>
+                    <span class="status-indicator error pulse" id="status-luces">🔴</span>
+                </button>
+                
+                <button class="module-button" id="module-motores" data-module="motores">
+                    <span class="module-icon">⚙️</span>
+                    <span class="module-name">Modulo_Motores.js</span>
+                    <span class="status-indicator error pulse" id="status-motores">🔴</span>
+                </button>
+                
+                <button class="module-button" id="module-giroscopio" data-module="giroscopio">
+                    <span class="module-icon">⚖️</span>
+                    <span class="module-name">Modulo_Giroscopio.js</span>
+                    <span class="status-indicator error pulse" id="status-giroscopio">🔴</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="column-center">
+            <h2 class="section-title glow">EDITOR DE PROTOCOLOS</h2>
+            <div class="editor-container">
+                <textarea id="codeEditor" class="code-editor" placeholder="Selecciona un módulo para ver su código corrupto...">
+</textarea>
+            </div>
+            <button class="test-button glow" id="testButton">
+                <span class="button-text">[ ¡PROBAR PROTOCOLO! ]</span>
+            </button>
+        </div>
+
+        <div class="column-right">
+            <h2 class="section-title glow">CAJA DE HERRAMIENTAS DEL CADETE</h2>
+            <div class="toolkit">
+                <div class="rule-card">
+                    <h3 class="rule-title">Punto Final</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>activarLuz()</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>activarLuz();</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3 class="rule-title">Burbujas de Texto</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>decir(Hola robot)</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>decir("Hola robot");</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3 class="rule-title">Abrazos de Grupo</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>si (condicion) { hazAlgo();</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>si (condicion) { hazAlgo(); }</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3 class="rule-title">Contenedores</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>mover 5 pasos</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>mover(5);</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pantalla de Misión Cumplida -->
+    <div class="mission-complete hidden" id="missionComplete">
+        <div class="completion-container">
+            <div class="aurora-animation">
+                <div class="aurora-eye">👁️</div>
+                <h1 class="completion-title glow">A.U.R.O.R.A. ACTIVADA</h1>
+                <p class="completion-subtitle">SISTEMAS ESTABILIZADOS</p>
+            </div>
+            
+            <div class="completion-message">
+                <h2 class="glow">¡MISIÓN CUMPLIDA!</h2>
+                <p>¡Excelente trabajo, Cadete! Has reparado exitosamente todos los protocolos de A.U.R.O.R.A.</p>
+                <p>Los sistemas están ahora operativos y listos para la siguiente fase.</p>
+                
+                <button class="continue-button glow" id="continueButton">
+                    [ CONTINUAR A LA MISIÓN 2 ]
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensaje de feedback -->
+    <div class="feedback-message hidden" id="feedbackMessage">
+        <div class="feedback-content">
+            <span class="feedback-text" id="feedbackText"></span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
