@@ -10,6 +10,60 @@
 <body>
     <div class="scanlines"></div>
     
+    <!-- Tutorial Overlay -->
+    <div class="tutorial-overlay" id="tutorialOverlay">
+        <div class="tutorial-container">
+            <div class="tutorial-header">
+                <h1 class="tutorial-title glow">A.U.R.O.R.A.</h1>
+                <p class="tutorial-subtitle">SISTEMA DE RECONOCIMIENTO ORBITAL AUTOMATIZADO</p>
+            </div>
+            
+            <div class="tutorial-content" id="tutorialContent">
+                <div class="tutorial-step active" data-step="0">
+                    <div class="step-icon">🚀</div>
+                    <h2 class="step-title glow">¡BIENVENIDO, CADETE!</h2>
+                    <p class="step-description">El sistema A.U.R.O.R.A. ha sufrido daños críticos. Debes reparar los 3 módulos dañados para restaurar las comunicaciones con Marte.</p>
+                </div>
+                
+                <div class="tutorial-step" data-step="1">
+                    <div class="step-icon">🔴</div>
+                    <h2 class="step-title glow">MÓDULOS DAÑADOS</h2>
+                    <p class="step-description">Estos son los módulos que necesitan reparación. 🔴 = Dañado, 🟢 = Reparado. Haz clic en cada módulo para ver su código.</p>
+                </div>
+                
+                <div class="tutorial-step" data-step="2">
+                    <div class="step-icon">💻</div>
+                    <h2 class="step-title glow">EDITOR DE PROTOCOLOS</h2>
+                    <p class="step-description">Aquí editarás el código de cada módulo. Usa el botón '¡PROBAR PROTOCOLO!' para verificar tus correcciones.</p>
+                </div>
+                
+                <div class="tutorial-step" data-step="3">
+                    <div class="step-icon">🔧</div>
+                    <h2 class="step-title glow">CAJA DE HERRAMIENTAS</h2>
+                    <p class="step-description">Tu guía de sintaxis. Compara los ejemplos incorrectos (❌) con los correctos (✅) para saber cómo arreglar el código.</p>
+                    <div class="mobile-note">
+                        <small>📱 En dispositivos móviles, las herramientas aparecen en la parte inferior</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tutorial-navigation">
+                <button class="tutorial-btn tutorial-prev" id="tutorialPrev">◀ ANTERIOR</button>
+                <div class="tutorial-dots" id="tutorialDots">
+                    <span class="dot active" data-step="0"></span>
+                    <span class="dot" data-step="1"></span>
+                    <span class="dot" data-step="2"></span>
+                    <span class="dot" data-step="3"></span>
+                </div>
+                <button class="tutorial-btn tutorial-next" id="tutorialNext">SIGUIENTE ▶</button>
+            </div>
+            
+            <button class="tutorial-start-btn glow hidden" id="tutorialStart">
+                [ INICIAR MISIÓN ]
+            </button>
+        </div>
+    </div>
+    
     <header class="header">
         <h1 class="title glow">A.U.R.O.R.A.</h1>
         <p class="subtitle">SISTEMA DE RECONOCIMIENTO ORBITAL AUTOMATIZADO</p>
@@ -125,11 +179,26 @@
             <div class="completion-message">
                 <h2 class="glow">¡MISIÓN CUMPLIDA!</h2>
                 <p>¡Excelente trabajo, Cadete! Has reparado exitosamente todos los protocolos de A.U.R.O.R.A.</p>
-                <p>Los sistemas están ahora operativos y listos para la siguiente fase.</p>
                 
-                <button class="continue-button glow" id="continueButton">
-                    [ CONTINUAR A LA MISIÓN 2 ]
-                </button>
+                <div class="password-section">
+                    <h3 class="password-title glow">CÓDIGO DE ACCESO GENERADO</h3>
+                    <div class="password-display" id="passwordDisplay">
+                        <span class="password-text" id="passwordText">AURORA...</span>
+                    </div>
+                    
+                    <div class="password-actions">
+                        <button class="password-btn copy-btn glow" id="copyPasswordBtn">
+                            📋 COPIAR CONTRASEÑA
+                        </button>
+                        <button class="password-btn return-btn glow" id="returnBtn">
+                            🔙 REGRESAR A LA TERMINAL DE PROTOCOLOS
+                        </button>
+                    </div>
+                    
+                    <p class="password-warning">
+                        Guarda tu contraseña en un lugar seguro, esta servirá para acceder al PROTOCOLO 2 de AURORA
+                    </p>
+                </div>
             </div>
         </div>
     </div>
