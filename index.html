@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.U.R.O.R.A. - Misión 1: Inspección de Protocolos</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <!-- Tutorial Overlay -->
+    <div class="tutorial-overlay" id="tutorialOverlay">
+        <div class="tutorial-container">
+            <div class="tutorial-header">
+                <h1 class="tutorial-title glow">A.U.R.O.R.A.</h1>
+                <p class="tutorial-subtitle">SISTEMA DE RECONOCIMIENTO ORBITAL AUTOMATIZADO</p>
+            </div>
+            
+            <div class="tutorial-content" id="tutorialContent">
+                <div class="tutorial-step active" data-step="0">
+                    <div class="step-icon">🚀</div>
+                    <h2 class="step-title glow">¡BIENVENIDO, CADETE!</h2>
+                    <p class="step-description">El sistema A.U.R.O.R.A. ha sufrido daños críticos. Debes reparar los 3 módulos dañados para restaurar las comunicaciones con Marte.</p>
+                </div>
+                
+                <div class="tutorial-step" data-step="1">
+                    <div class="step-icon">🔴</div>
+                    <h2 class="step-title glow">MÓDULOS DAÑADOS</h2>
+                    <p class="step-description">Estos son los módulos que necesitan reparación. 🔴 = Dañado, 🟢 = Reparado. Haz clic en cada módulo para ver su código.</p>
+                </div>
+                
+                <div class="tutorial-step" data-step="2">
+                    <div class="step-icon">💻</div>
+                    <h2 class="step-title glow">EDITOR DE PROTOCOLOS</h2>
+                    <p class="step-description">Aquí editarás el código de cada módulo. Usa el botón '¡PROBAR PROTOCOLO!' para verificar tus correcciones.</p>
+                </div>
+                
+                <div class="tutorial-step" data-step="3">
+                    <div class="step-icon">🔧</div>
+                    <h2 class="step-title glow">CAJA DE HERRAMIENTAS</h2>
+                    <p class="step-description">Tu guía de sintaxis. Compara los ejemplos incorrectos (❌) con los correctos (✅) para saber cómo arreglar el código.</p>
+                    <div class="mobile-note">
+                        <small>📱 En dispositivos móviles, las herramientas aparecen en la parte inferior</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tutorial-navigation">
+                <button class="tutorial-btn tutorial-prev" id="tutorialPrev">◀ ANTERIOR</button>
+                <div class="tutorial-dots" id="tutorialDots">
+                    <span class="dot active" data-step="0"></span>
+                    <span class="dot" data-step="1"></span>
+                    <span class="dot" data-step="2"></span>
+                    <span class="dot" data-step="3"></span>
+                </div>
+                <button class="tutorial-btn tutorial-next" id="tutorialNext">SIGUIENTE ▶</button>
+            </div>
+            
+            <button class="tutorial-start-btn glow hidden" id="tutorialStart">
+                [ INICIAR MISIÓN ]
+            </button>
+        </div>
+    </div>
+    
+    <header class="header">
+        <h1 class="title glow">A.U.R.O.R.A.</h1>
+        <p class="subtitle">SISTEMA DE RECONOCIMIENTO ORBITAL AUTOMATIZADO</p>
+        <p class="mission-title">MISIÓN 1: INSPECCIÓN DE PROTOCOLOS</p>
+    </header>
 
+    <main class="game-container" id="gameContainer">
+        <div class="column-left">
+            <h2 class="section-title glow">MÓDULOS DAÑADOS</h2>
+            <div class="modules-panel">
+                <button class="module-button" id="module-luces" data-module="luces">
+                    <span class="module-icon">💡</span>
+                    <span class="module-name">Modulo_Luces.js</span>
+                    <span class="status-indicator error pulse" id="status-luces">🔴</span>
+                </button>
+                
+                <button class="module-button" id="module-motores" data-module="motores">
+                    <span class="module-icon">⚙️</span>
+                    <span class="module-name">Modulo_Motores.js</span>
+                    <span class="status-indicator error pulse" id="status-motores">🔴</span>
+                </button>
+                
+                <button class="module-button" id="module-giroscopio" data-module="giroscopio">
+                    <span class="module-icon">⚖️</span>
+                    <span class="module-name">Modulo_Giroscopio.js</span>
+                    <span class="status-indicator error pulse" id="status-giroscopio">🔴</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="column-center">
+            <h2 class="section-title glow">EDITOR DE PROTOCOLOS</h2>
+            <div class="editor-container">
+                <textarea id="codeEditor" class="code-editor" placeholder="Selecciona un módulo para ver su código corrupto...">
+</textarea>
+            </div>
+            <button class="test-button glow" id="testButton">
+                <span class="button-text">[ ¡PROBAR PROTOCOLO! ]</span>
+            </button>
+        </div>
+
+        <div class="column-right">
+            <h2 class="section-title glow">CAJA DE HERRAMIENTAS DEL CADETE</h2>
+            <div class="toolkit">
+                <div class="rule-card">
+                    <h3 class="rule-title">Punto Final</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>activarLuz()</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>activarLuz();</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3 class="rule-title">Burbujas de Texto</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>decir(Hola robot)</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>decir("Hola robot");</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3 class="rule-title">Abrazos de Grupo</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>si (condicion) { hazAlgo();</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>si (condicion) { hazAlgo(); }</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <h3 class="rule-title">Contenedores</h3>
+                    <div class="example-row">
+                        <div class="bad-example">
+                            <span class="label">ASÍ NO ❌</span>
+                            <code>mover 5 pasos</code>
+                        </div>
+                        <div class="good-example">
+                            <span class="label">ASÍ SÍ ✅</span>
+                            <code>mover(5);</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pantalla de Misión Cumplida -->
+    <div class="mission-complete hidden" id="missionComplete">
+        <div class="completion-container">
+            <div class="aurora-animation">
+                <div class="aurora-eye">👁️</div>
+                <h1 class="completion-title glow">A.U.R.O.R.A. ACTIVADA</h1>
+                <p class="completion-subtitle">SISTEMAS ESTABILIZADOS</p>
+            </div>
+            
+            <div class="completion-message">
+                <h2 class="glow">¡MISIÓN CUMPLIDA!</h2>
+                <p>¡Excelente trabajo, Cadete! Has reparado exitosamente todos los protocolos de A.U.R.O.R.A.</p>
+                
+                <div class="password-section">
+                    <h3 class="password-title glow">CÓDIGO DE ACCESO GENERADO</h3>
+                    <div class="password-display" id="passwordDisplay">
+                        <span class="password-text" id="passwordText">AURORA...</span>
+                    </div>
+                    
+                    <div class="password-actions">
+                        <button class="password-btn copy-btn glow" id="copyPasswordBtn">
+                            📋 COPIAR CONTRASEÑA
+                        </button>
+                        <button class="password-btn return-btn glow" id="returnBtn">
+                            🔙 REGRESAR A LA TERMINAL DE PROTOCOLOS
+                        </button>
+                    </div>
+                    
+                    <p class="password-warning">
+                        Guarda tu contraseña en un lugar seguro, esta servirá para acceder al PROTOCOLO 2 de AURORA
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensaje de feedback -->
+    <div class="feedback-message hidden" id="feedbackMessage">
+        <div class="feedback-content">
+            <span class="feedback-text" id="feedbackText"></span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
