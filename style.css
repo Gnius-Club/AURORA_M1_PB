@@ -1,3 +1,5 @@
+--- START OF FILE style.css ---
+
 :root {
   /* Primitive Color Tokens */
   --color-white: rgba(255, 255, 255, 1);
@@ -84,15 +86,16 @@
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, monospace;
-  --font-size-xs: 11px;
-  --font-size-sm: 12px;
-  --font-size-base: 14px;
-  --font-size-md: 14px;
-  --font-size-lg: 16px;
-  --font-size-xl: 18px;
-  --font-size-2xl: 20px;
-  --font-size-3xl: 24px;
-  --font-size-4xl: 30px;
+  /* CAMBIO: Tamaños de fuente aumentados un 35% */
+  --font-size-xs: 15px;
+  --font-size-sm: 16px;
+  --font-size-base: 19px;
+  --font-size-md: 19px;
+  --font-size-lg: 22px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 27px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 41px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 550;
@@ -746,7 +749,8 @@ select.form-control {
 }
 
 body {
-    font-family: 'VT323', monospace;
+    /* CAMBIO: Fuente principal cambiada a Roboto */
+    font-family: 'Roboto', sans-serif;
     background: #020a1a;
     color: #00ffff;
     overflow-x: hidden;
@@ -818,14 +822,16 @@ body {
 }
 
 .tutorial-title {
-    font-size: 48px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 65px;
     color: #00ff00;
     margin-bottom: var(--space-8);
     letter-spacing: 4px;
 }
 
 .tutorial-subtitle {
-    font-size: 16px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 22px;
     color: #00ffff;
     opacity: 0.8;
 }
@@ -854,7 +860,8 @@ body {
 }
 
 .step-icon {
-    font-size: 60px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 81px;
     margin-bottom: var(--space-16);
     animation: float 3s ease-in-out infinite;
 }
@@ -865,13 +872,15 @@ body {
 }
 
 .step-title {
-    font-size: 32px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 43px;
     color: #ffff00;
     margin-bottom: var(--space-16);
 }
 
 .step-description {
-    font-size: 18px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 24px;
     color: #00ffff;
     line-height: 1.5;
     max-width: 600px;
@@ -888,7 +897,8 @@ body {
 
 .mobile-note small {
     color: #ffff00;
-    font-size: 14px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 19px;
 }
 
 .tutorial-navigation {
@@ -904,10 +914,11 @@ body {
     border-radius: var(--radius-base);
     padding: var(--space-8) var(--space-16);
     color: #00ffff;
-    font-family: 'VT323', monospace;
-    font-size: 16px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 22px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .tutorial-btn:hover {
@@ -945,10 +956,11 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-16) var(--space-32);
     color: #00ff00;
-    font-family: 'VT323', monospace;
-    font-size: 24px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 32px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .tutorial-start-btn:hover {
@@ -968,23 +980,60 @@ body {
 }
 
 .title {
-    font-size: 48px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 65px;
     color: #00ff00;
     margin-bottom: var(--space-8);
     letter-spacing: 4px;
 }
 
 .subtitle {
-    font-size: 16px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 22px;
     color: #00ffff;
     margin-bottom: var(--space-16);
     opacity: 0.8;
 }
 
 .mission-title {
-    font-size: 20px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 27px;
     color: #ffff00;
     font-weight: bold;
+}
+
+/* NUEVO: Estilos para el cronómetro */
+.timer-container {
+    margin-top: var(--space-24);
+    padding: var(--space-8) var(--space-16);
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    border-radius: var(--radius-base);
+    display: inline-block;
+}
+
+.timer {
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 65px;
+    color: #ff3333;
+    text-shadow: 
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000;
+    letter-spacing: 4px;
+    animation: pulse-timer 1s infinite alternate;
+    font-weight: bold;
+}
+
+@keyframes pulse-timer {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0.85;
+        transform: scale(1.02);
+    }
 }
 
 /* Layout principal */
@@ -1009,7 +1058,8 @@ body {
 }
 
 .section-title {
-    font-size: 24px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 32px;
     color: #00ff00;
     margin-bottom: var(--space-24);
     text-align: center;
@@ -1030,8 +1080,8 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-20);
     color: #00ffff;
-    font-family: 'VT323', monospace;
-    font-size: 18px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -1039,6 +1089,7 @@ body {
     gap: var(--space-12);
     position: relative;
     overflow: hidden;
+    font-weight: bold;
 }
 
 .module-button:hover {
@@ -1054,7 +1105,8 @@ body {
 }
 
 .module-icon {
-    font-size: 24px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 32px;
     min-width: 30px;
 }
 
@@ -1064,7 +1116,8 @@ body {
 }
 
 .status-indicator {
-    font-size: 20px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 27px;
     min-width: 25px;
 }
 
@@ -1094,8 +1147,10 @@ body {
     border-radius: var(--radius-base);
     padding: var(--space-16);
     color: #00ffff;
+    /* CAMBIO: Fuente VT323 mantenida solo para el editor */
     font-family: 'VT323', monospace;
-    font-size: 18px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 24px;
     line-height: 1.6;
     resize: vertical;
     outline: none;
@@ -1121,12 +1176,13 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-16) var(--space-24);
     color: #00ff00;
-    font-family: 'VT323', monospace;
-    font-size: 24px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 32px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    font-weight: bold;
 }
 
 .test-button:hover {
@@ -1167,7 +1223,8 @@ body {
 }
 
 .rule-title {
-    font-size: 18px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 24px;
     color: #ffff00;
     margin-bottom: var(--space-12);
     text-align: center;
@@ -1182,7 +1239,8 @@ body {
 .bad-example, .good-example {
     padding: var(--space-8);
     border-radius: var(--radius-sm);
-    font-size: 14px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 19px;
 }
 
 .bad-example {
@@ -1197,7 +1255,8 @@ body {
 
 .label {
     display: block;
-    font-size: 12px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 16px;
     margin-bottom: var(--space-4);
     font-weight: bold;
 }
@@ -1215,7 +1274,8 @@ body {
     background: none;
     padding: 0;
     font-family: 'VT323', monospace;
-    font-size: 14px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 19px;
 }
 
 /* Pantalla de misión cumplida */
@@ -1244,7 +1304,8 @@ body {
 }
 
 .aurora-eye {
-    font-size: 120px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 162px;
     margin-bottom: var(--space-16);
     animation: aurora-pulse 2s infinite;
 }
@@ -1261,26 +1322,30 @@ body {
 }
 
 .completion-title {
-    font-size: 48px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 65px;
     color: #00ff00;
     margin-bottom: var(--space-8);
 }
 
 .completion-subtitle {
-    font-size: 20px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 27px;
     color: #00ffff;
     opacity: 0.8;
     margin-bottom: var(--space-32);
 }
 
 .completion-message h2 {
-    font-size: 36px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 49px;
     color: #ffff00;
     margin-bottom: var(--space-16);
 }
 
 .completion-message p {
-    font-size: 18px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 24px;
     color: #00ffff;
     margin-bottom: var(--space-16);
     line-height: 1.5;
@@ -1296,7 +1361,8 @@ body {
 }
 
 .password-title {
-    font-size: 24px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 32px;
     color: #ffff00;
     margin-bottom: var(--space-16);
 }
@@ -1312,8 +1378,11 @@ body {
 }
 
 .password-text {
-    font-family: 'VT323', monospace;
-    font-size: 32px;
+    /* CAMBIO: Fuente cambiada a Roboto */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 43px;
     color: #00ff00;
     text-shadow: 0 0 10px #00ff00;
     letter-spacing: 2px;
@@ -1339,12 +1408,13 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-12) var(--space-20);
     color: #00ffff;
-    font-family: 'VT323', monospace;
-    font-size: 16px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 22px;
     cursor: pointer;
     transition: all 0.3s ease;
     flex: 1;
     max-width: 250px;
+    font-weight: bold;
 }
 
 .copy-btn:hover {
@@ -1366,7 +1436,8 @@ body {
 }
 
 .password-warning {
-    font-size: 14px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 19px;
     color: #ffff00;
     font-style: italic;
     opacity: 0.8;
@@ -1393,7 +1464,8 @@ body {
 }
 
 .feedback-text {
-    font-size: 20px;
+    /* CAMBIO: Tamaño de fuente aumentado */
+    font-size: 27px;
     color: #00ffff;
 }
 
@@ -1428,11 +1500,13 @@ body {
     }
     
     .title, .tutorial-title {
-        font-size: 36px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 49px;
     }
     
     .section-title {
-        font-size: 20px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 27px;
     }
 
     .password-actions {
@@ -1455,15 +1529,18 @@ body {
     }
     
     .title, .tutorial-title {
-        font-size: 28px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 38px;
     }
     
     .completion-title {
-        font-size: 32px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 43px;
     }
     
     .aurora-eye {
-        font-size: 80px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 108px;
     }
 
     .tutorial-navigation {
@@ -1472,14 +1549,17 @@ body {
     }
 
     .step-title {
-        font-size: 24px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 32px;
     }
 
     .step-description {
-        font-size: 16px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 22px;
     }
 
     .password-text {
-        font-size: 20px;
+        /* CAMBIO: Tamaño de fuente aumentado */
+        font-size: 27px;
     }
 }
