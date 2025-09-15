@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.U.R.O.R.A. - Misión 1: Inspección de Protocolos</title>
-    <link href="https://fonts.googleapis.com/css2?family=VT323:wght@400&display=swap" rel="stylesheet">
+    <!-- CAMBIO: Añadida fuente Roboto y combinada con la de VT323 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -68,6 +71,10 @@
         <h1 class="title glow">A.U.R.O.R.A.</h1>
         <p class="subtitle">SISTEMA DE RECONOCIMIENTO ORBITAL AUTOMATIZADO</p>
         <p class="mission-title">MISIÓN 1: INSPECCIÓN DE PROTOCOLOS</p>
+        <!-- NUEVO: Contenedor del cronómetro -->
+        <div class="timer-container">
+            <div id="timer" class="timer glow">00:00:00</div>
+        </div>
     </header>
 
     <main class="game-container" id="gameContainer">
