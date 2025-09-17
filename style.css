@@ -782,14 +782,13 @@ body {
     100% { transform: translateY(4px); }
 }
 
-/* Efectos de glow */
+/* CAMBIO: Efecto glow ajustado para mayor legibilidad */
 .glow {
     text-shadow: 
         0 0 5px currentColor,
-        0 0 10px currentColor,
-        0 0 20px currentColor,
-        0 0 40px currentColor;
+        0 0 15px currentColor;
 }
+
 
 /* Tutorial Overlay */
 .tutorial-overlay {
@@ -822,7 +821,6 @@ body {
 }
 
 .tutorial-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 65px;
     color: #00ff00;
     margin-bottom: var(--space-8);
@@ -830,7 +828,6 @@ body {
 }
 
 .tutorial-subtitle {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 22px;
     color: #00ffff;
     opacity: 0.8;
@@ -860,7 +857,6 @@ body {
 }
 
 .step-icon {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 81px;
     margin-bottom: var(--space-16);
     animation: float 3s ease-in-out infinite;
@@ -872,14 +868,12 @@ body {
 }
 
 .step-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 43px;
     color: #ffff00;
     margin-bottom: var(--space-16);
 }
 
 .step-description {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 24px;
     color: #00ffff;
     line-height: 1.5;
@@ -897,7 +891,6 @@ body {
 
 .mobile-note small {
     color: #ffff00;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 19px;
 }
 
@@ -914,11 +907,10 @@ body {
     border-radius: var(--radius-base);
     padding: var(--space-8) var(--space-16);
     color: #00ffff;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 22px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: bold;
+    font-family: 'VT323', monospace;
 }
 
 .tutorial-btn:hover {
@@ -956,11 +948,10 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-16) var(--space-32);
     color: #00ff00;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 32px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: bold;
+    font-family: 'VT323', monospace;
 }
 
 .tutorial-start-btn:hover {
@@ -980,7 +971,6 @@ body {
 }
 
 .title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 65px;
     color: #00ff00;
     margin-bottom: var(--space-8);
@@ -988,7 +978,6 @@ body {
 }
 
 .subtitle {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 22px;
     color: #00ffff;
     margin-bottom: var(--space-16);
@@ -996,13 +985,12 @@ body {
 }
 
 .mission-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 27px;
     color: #ffff00;
     font-weight: bold;
 }
 
-/* NUEVO: Estilos para el cronómetro */
+/* Estilos para el cronómetro */
 .timer-container {
     margin-top: var(--space-24);
     padding: var(--space-8) var(--space-16);
@@ -1010,30 +998,23 @@ body {
     border: 2px solid rgba(255, 0, 0, 0.5);
     border-radius: var(--radius-base);
     display: inline-block;
+    transition: all 0.5s ease;
 }
 
 .timer {
-    /* CAMBIO: Tamaño de fuente aumentado */
+    font-family: 'VT323', monospace;
     font-size: 65px;
     color: #ff3333;
     text-shadow: 
         0 0 5px #ff0000,
-        0 0 10px #ff0000,
-        0 0 20px #ff0000;
+        0 0 10px #ff0000;
     letter-spacing: 4px;
     animation: pulse-timer 1s infinite alternate;
-    font-weight: bold;
 }
 
 @keyframes pulse-timer {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-    to {
-        opacity: 0.85;
-        transform: scale(1.02);
-    }
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0.85; transform: scale(1.02); }
 }
 
 /* Layout principal */
@@ -1058,7 +1039,6 @@ body {
 }
 
 .section-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 32px;
     color: #00ff00;
     margin-bottom: var(--space-24);
@@ -1080,7 +1060,6 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-20);
     color: #00ffff;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1089,7 +1068,6 @@ body {
     gap: var(--space-12);
     position: relative;
     overflow: hidden;
-    font-weight: bold;
 }
 
 .module-button:hover {
@@ -1105,7 +1083,6 @@ body {
 }
 
 .module-icon {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 32px;
     min-width: 30px;
 }
@@ -1116,7 +1093,6 @@ body {
 }
 
 .status-indicator {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 27px;
     min-width: 25px;
 }
@@ -1147,9 +1123,7 @@ body {
     border-radius: var(--radius-base);
     padding: var(--space-16);
     color: #00ffff;
-    /* CAMBIO: Fuente VT323 mantenida solo para el editor */
     font-family: 'VT323', monospace;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 24px;
     line-height: 1.6;
     resize: vertical;
@@ -1176,13 +1150,12 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-16) var(--space-24);
     color: #00ff00;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 32px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    font-weight: bold;
+    font-family: 'VT323', monospace;
 }
 
 .test-button:hover {
@@ -1223,7 +1196,6 @@ body {
 }
 
 .rule-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 24px;
     color: #ffff00;
     margin-bottom: var(--space-12);
@@ -1239,7 +1211,6 @@ body {
 .bad-example, .good-example {
     padding: var(--space-8);
     border-radius: var(--radius-sm);
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 19px;
 }
 
@@ -1255,7 +1226,6 @@ body {
 
 .label {
     display: block;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 16px;
     margin-bottom: var(--space-4);
     font-weight: bold;
@@ -1274,7 +1244,6 @@ body {
     background: none;
     padding: 0;
     font-family: 'VT323', monospace;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 19px;
 }
 
@@ -1304,7 +1273,6 @@ body {
 }
 
 .aurora-eye {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 162px;
     margin-bottom: var(--space-16);
     animation: aurora-pulse 2s infinite;
@@ -1322,14 +1290,12 @@ body {
 }
 
 .completion-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 65px;
     color: #00ff00;
     margin-bottom: var(--space-8);
 }
 
 .completion-subtitle {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 27px;
     color: #00ffff;
     opacity: 0.8;
@@ -1337,14 +1303,12 @@ body {
 }
 
 .completion-message h2 {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 49px;
     color: #ffff00;
     margin-bottom: var(--space-16);
 }
 
 .completion-message p {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 24px;
     color: #00ffff;
     margin-bottom: var(--space-16);
@@ -1361,7 +1325,6 @@ body {
 }
 
 .password-title {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 32px;
     color: #ffff00;
     margin-bottom: var(--space-16);
@@ -1378,10 +1341,7 @@ body {
 }
 
 .password-text {
-    /* CAMBIO: Fuente cambiada a Roboto */
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    /* CAMBIO: Tamaño de fuente aumentado */
+    font-family: 'VT323', monospace;
     font-size: 43px;
     color: #00ff00;
     text-shadow: 0 0 10px #00ff00;
@@ -1408,13 +1368,12 @@ body {
     border-radius: var(--radius-md);
     padding: var(--space-12) var(--space-20);
     color: #00ffff;
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 22px;
     cursor: pointer;
     transition: all 0.3s ease;
     flex: 1;
     max-width: 250px;
-    font-weight: bold;
+    font-family: 'VT323', monospace;
 }
 
 .copy-btn:hover {
@@ -1436,7 +1395,6 @@ body {
 }
 
 .password-warning {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 19px;
     color: #ffff00;
     font-style: italic;
@@ -1464,7 +1422,6 @@ body {
 }
 
 .feedback-text {
-    /* CAMBIO: Tamaño de fuente aumentado */
     font-size: 27px;
     color: #00ffff;
 }
@@ -1500,12 +1457,10 @@ body {
     }
     
     .title, .tutorial-title {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 49px;
     }
     
     .section-title {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 27px;
     }
 
@@ -1529,17 +1484,14 @@ body {
     }
     
     .title, .tutorial-title {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 38px;
     }
     
     .completion-title {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 43px;
     }
     
     .aurora-eye {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 108px;
     }
 
@@ -1549,17 +1501,14 @@ body {
     }
 
     .step-title {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 32px;
     }
 
     .step-description {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 22px;
     }
 
     .password-text {
-        /* CAMBIO: Tamaño de fuente aumentado */
         font-size: 27px;
     }
 }
